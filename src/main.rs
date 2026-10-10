@@ -5,9 +5,10 @@ use rand::prelude::*;
 
 fn main() {
     println!("Guess the number!");
-    loop {
-        let secret_number = rand::rng().random_range(1..=100);
 
+    let secret_number = rand::rng().random_range(1..=100);
+
+    loop {
         println!("Please input your guess.");
 
         let mut guess = String::new();
@@ -23,8 +24,6 @@ fn main() {
                 continue;
             }
         };
-
-        println!("You guessed: {guess}");
 
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too small!, {secret_number}"),
